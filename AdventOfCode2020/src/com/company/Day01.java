@@ -1,14 +1,13 @@
 package com.company;
-import java.awt.*;
 import java.io.*;
 import java.util.*;
 import java.util.List;
 
-public class Main {
+public class Day01 {
 
-    public static void main(String[] args) {
-        try {
-            File file = new File("//Users//jeanie.conner//code//adventofcode2020//Day01//input.txt");
+    public static void Day01Run(){
+        try { //
+            File file = new File("//Users//jeanie.conner//code//adventofcode2020//AdventOfCode2020//Data//input01.txt");
             //two sum problem:
             //only reading in as needed
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -53,7 +52,7 @@ public class Main {
             }
 
         }
-        catch(Exception e){
+        catch(Exception e) {
             System.out.println(e.getMessage());
         }
     }

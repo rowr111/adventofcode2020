@@ -1,14 +1,12 @@
 package com.company;
-import java.awt.*;
 import java.io.*;
 import java.util.*;
 import java.util.List;
 
-public class Main {
-
-    public static void main(String[] args) {
+public class Day02 {
+    public static void Day02Run(){
         try{
-            File file = new File("//Users//jeanie.conner//code//adventofcode2020//Day02//input.txt");
+            File file = new File("//Users//jeanie.conner//code//adventofcode2020//AdventOfCode2020/Data//input02.txt");
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
             int goodPwds1 = 0;
@@ -37,6 +35,5 @@ public class Main {
         catch(Exception e){
             System.out.println(e.getMessage());
         }
-
     }
 }
