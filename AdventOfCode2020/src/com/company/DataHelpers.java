@@ -1,5 +1,6 @@
 package com.company;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
 
@@ -29,5 +30,30 @@ public class DataHelpers {
         }
 
         return matrix;
+    }
+
+    public static List<HashMap<String, String>> getPassport(String filename) throws Exception{
+        List<HashMap<String, String>> passports = new ArrayList<>();
+        File inFile = new File(filename);
+        Scanner in = new Scanner(inFile);
+        HashMap<String, String> passport = new HashMap<>();
+        while(in.hasNextLine()){
+            String nextLine = in.nextLine().trim();
+            if(nextLine == ""){ //we're done with this passport, move along!
+                passports.add(passport);
+                passport = new HashMap<>();
+            }
+            else{
+                String[] parts = nextLine.split(" ");
+                for(String part : parts){
+                    String[] addMe = part.split(":");
+                    passport.put(addMe[0], addMe[1]);
+                }
+            }
+        }
+        in.close();
+        passports.add(passport); //add the last passport
+        System.out.println(("Passport count: " + passports.size()));
+        return passports;
     }
 }
