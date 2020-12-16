@@ -11,10 +11,8 @@ public class Day05 {
             int lowest = Integer.MAX_VALUE;
             int total = 0;
             for(String input: inputs){
-                String rowId = input.substring(0,7);
-                String columnId = input.substring(7);
-                int row = binarySearch(rowId, 0, 127, 0);
-                int col =  binarySearch(columnId, 0, 7, 0);
+                int row = binarySearch(input.substring(0,7), 0, 127, 0);
+                int col =  binarySearch(input.substring(7), 0, 7, 0);
                 int id = (row*8) + col;
                 total += id;
                 highest = id > highest ? id : highest;
@@ -22,9 +20,7 @@ public class Day05 {
             }
             System.out.println("highest: " + highest);
             System.out.println("lowest: " + lowest);
-            for(int i=lowest; i<= highest; i++){
-                total -= i;
-            }
+            for(int i=lowest; i<= highest; i++) total -= i;
             System.out.println("my seat: " + total * -1);
         }
         catch (Exception e){
@@ -36,10 +32,8 @@ public class Day05 {
     {
         if( x >= searchme.length()) return l;
         int mid = l + (r - l) / 2;
-
         if (searchme.charAt(x)  == 'L' || searchme.charAt(x) == 'F')
             return binarySearch(searchme, l, mid - 1, x+1);
-
         return binarySearch(searchme, mid + 1, r, x+1);
     }
 }
