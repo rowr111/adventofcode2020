@@ -56,4 +56,15 @@ public class DataHelpers {
         System.out.println(("Passport count: " + passports.size()));
         return passports;
     }
+
+    public static List<String> returnListOfStrings(String filename) throws Exception {
+        List<String> results = new ArrayList<>();
+        File inFile = new File(filename);
+        Scanner in = new Scanner(inFile);
+        while(in.hasNextLine()){
+            String nextLine = in.nextLine().trim();
+            results.add(nextLine);
+        }
+        return results;
+    }
 }
