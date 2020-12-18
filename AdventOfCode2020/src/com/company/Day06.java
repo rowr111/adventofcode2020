@@ -7,7 +7,6 @@ public class Day06 {
         try {
             String pathname = "//Users//jeanie.conner//code//adventofcode2020//AdventOfCode2020/Data//input06.txt";
             List<String> inputs = DataHelpers.returnListOfStrings(pathname);
-            int[] totals = new int[26];
             int[] groupCount = new int[26];
             int groupPeeps = 0;
             int finalTotal = 0;
